@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Username: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewLoggedInUser"
+        android:layout_marginTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/textViewUsername"
+        android:text=""
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/buttonAdminArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewLoggedInUser"
+        android:layout_marginTop="350dp"
+        android:text="Admin Area"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAdminArea"
+        android:layout_marginTop="300dp"
+        android:text="@string/logout" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
