@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private static final String PREF_NAME = "user_pref";
     private static final String KEY_LOGGED_IN = "logged in";
-
     public static final String TAG = "Project2_db";
 
     @Override

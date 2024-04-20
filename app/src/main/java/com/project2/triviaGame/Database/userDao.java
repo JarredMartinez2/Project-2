@@ -1,5 +1,6 @@
 package com.project2.triviaGame.Database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -23,4 +24,6 @@ public interface userDao {
     List<UserDB> getAllRecords();
     @Query("Delete from " + Project2Database.USER_DB_TABLE)
     void deleteALl();
+    @Query("SELECT * from " + Project2Database.USER_DB_TABLE + " WHERE userName == :userName")
+    LiveData<UserDB> getUserbyUserName(String userName);
 }

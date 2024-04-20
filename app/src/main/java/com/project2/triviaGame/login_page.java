@@ -13,11 +13,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.core.view.WindowCompat;
+import androidx.lifecycle.LiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.project2.triviaGame.Database.Project2Database;
+import com.project2.triviaGame.Database.ProjectRepository;
+import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.databinding.ActivityLoginPageBinding;
 
 public class login_page extends AppCompatActivity {
@@ -26,32 +30,20 @@ public class login_page extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityLoginPageBinding binding;
 
+    private ProjectRepository repository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-
+        repository = ProjectRepository.getRepository(getApplication());
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
-
+//
         Button buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = editTextUsername.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-
-                if (validateCredentials(username, password)) {
-                    //then it goes to the landing page
-                    Intent intent = new Intent(login_page.this, landing_page.class);
-                    //Pass the username to landing page
-                    intent.putExtra("username",username);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(login_page.this, "Invalid username or password. womp womp",
-                            Toast.LENGTH_SHORT).show();
-                }
+                validateCredentials();
             }
         });
     }
@@ -66,8 +58,30 @@ public class login_page extends AppCompatActivity {
     //This method checks to see if the entered username and password are valid.
     //This is a primitive checker and will be updated when more functionality is intended.
     //ie: when "create a user" button is implemented - there will be more users defined.
-    private boolean validateCredentials(String username, String password) {
-        return (username.equals("testuser1") && password.equals("testuser1")) ||
-                (username.equals("admin2") && password.equals("admin2"));
+    private void validateCredentials() {
+        String username = editTextUsername.getText().toString().trim();
+        if (username.isEmpty()) {
+            Toast.makeText(this, "User may not be blank", Toast.LENGTH_SHORT).show();
+        }
+        LiveData<UserDB> userObserver = repository.getUserByUserName(username);
+        userObserver.observe(this, userDB -> {
+            if (userDB != null) {
+                String password = editTextPassword.getText().toString().trim();
+                if (password.equals(userDB.getPassWord())) {
+                    startActivity(new Intent(login_page.this, landing_page.class));
+                } else {
+                    toastMaker("Invalid password");
+                    editTextPassword.setSelection(0);
+                }
+            } else {
+                toastMaker(String.format("%s is not a valid username", username));
+                editTextUsername.setSelection(0);
+            }
+        });
     }
+
+    private void toastMaker(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
 }

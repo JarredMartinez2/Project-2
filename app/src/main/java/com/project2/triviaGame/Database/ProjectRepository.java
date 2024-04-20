@@ -3,6 +3,8 @@ package com.project2.triviaGame.Database;
 import android.app.Application;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+
 import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.MainActivity;
 
@@ -64,5 +66,9 @@ public class ProjectRepository {
         Project2Database.databaseWriteExecuter.execute(() -> {
             userDAO.insert(userDB);
         });
+    }
+
+    public LiveData<UserDB> getUserByUserName(String userName) {
+        return userDAO.getUserbyUserName(userName);
     }
 }
