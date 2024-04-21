@@ -4,23 +4,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.core.view.WindowCompat;
-import androidx.lifecycle.LiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.project2.triviaGame.Database.ProjectRepository;
-import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.databinding.ActivityLandingPageBinding;
 
 public class landing_page extends AppCompatActivity {
