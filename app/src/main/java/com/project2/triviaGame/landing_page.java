@@ -13,11 +13,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.core.view.WindowCompat;
+import androidx.lifecycle.LiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.project2.triviaGame.Database.ProjectRepository;
+import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.databinding.ActivityLandingPageBinding;
 
 public class landing_page extends AppCompatActivity {
@@ -31,6 +34,8 @@ public class landing_page extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityLandingPageBinding binding;
 
+    private ProjectRepository repository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,17 +44,15 @@ public class landing_page extends AppCompatActivity {
         textViewUsername = findViewById(R.id.textViewUsername);
         adminAreaButton = findViewById(R.id.buttonAdminArea);
         logoutButton = findViewById(R.id.buttonLogout);
-        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
 
-        //Get the username from SharedPreferences
-        String username = sharedPreferences.getString(KEY_USERNAME, "");
+
+        boolean admin = getIntent().getBooleanExtra("admin", false);
+        String username = getIntent().getStringExtra("username");
 
         //Show the username
-        textViewUsername.setText("Logged in as : " + username);
+        textViewUsername.setText(getString(R.string.logged_in_as) + username);
 
-        boolean adminStatus = checkAdmin(username);
-
-        if (adminStatus) {
+        if (admin) {
             adminAreaButton.setVisibility(View.VISIBLE);
         }
 
@@ -68,10 +71,6 @@ public class landing_page extends AppCompatActivity {
                 startActivity(new Intent(landing_page.this, MainActivity.class));
             }
         });
-    }
-            private boolean checkAdmin(String username) {
-        //simple (not elegant) solution for only part 02:
-        return username.equals("admin2");
     }
 
     @Override

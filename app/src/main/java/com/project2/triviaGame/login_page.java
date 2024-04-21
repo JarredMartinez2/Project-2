@@ -68,7 +68,10 @@ public class login_page extends AppCompatActivity {
             if (userDB != null) {
                 String password = editTextPassword.getText().toString().trim();
                 if (password.equals(userDB.getPassWord())) {
-                    startActivity(new Intent(login_page.this, landing_page.class));
+                    Intent intent = new Intent(login_page.this, landing_page.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("admin", userDB.isAdmin());
+                    startActivity(intent);
                 } else {
                     toastMaker("Invalid password");
                     editTextPassword.setSelection(0);
