@@ -10,16 +10,19 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.project2.triviaGame.Database.entities.UserDB;
+import com.project2.triviaGame.Database.entities.Trivia;
 import com.project2.triviaGame.MainActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {UserDB.class}, version = 1, exportSchema = false)
+@Database(entities = {UserDB.class, Trivia.class}, version = 1, exportSchema = false)
 public abstract class Project2Database extends RoomDatabase {
 
     private static final String DATABASENAME = "userDB_database";
     public static final String USER_DB_TABLE = "userDbTable";
+
+    public static final String TRIVIA_TABLE = "triviaTable";
 
     private static volatile Project2Database INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -56,6 +59,16 @@ public abstract class Project2Database extends RoomDatabase {
 
                 UserDB testUser1 = new UserDB("testuser1", "testuser1");
                 dao.insert(testUser1);
+            });
+        }
+    };
+
+    private static final RoomDatabase.Callback addDefaultTrivia = new RoomDatabase.Callback() {
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+            databaseWriteExecuter.execute( () -> {
+
             });
         }
     };
