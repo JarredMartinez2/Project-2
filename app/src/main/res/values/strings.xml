@@ -53,4 +53,18 @@
     <string name="create_an_account">Create an Account</string>
     <string name="legally_distinct_quiz_card_game">Legally Distinct Quiz-Card Game</string>
     <string name="logged_in_as">"Logged in as : "</string>
+    <string name="title_activity_admin_page">admin_page</string>
+    <string name="clear_leaderboards">Clear Leaderboards</string>
+    <string name="remove_all_non_admin_users">Remove all non-admin users</string>
+    <string name="new_admin_username">New admin username</string>
+    <string name="create_new_admin_user">Create new admin user</string>
+    <string name="enter_username_to_remove">Enter username to remove</string>
+    <string name="remove_user">Remove user</string>
+    <string name="legally_distinct_quiz_game_admin_page">Legally Distinct Quiz Game Admin Page</string>
+    <string name="clearing_the_leaderboard_is_irreversible">Clearing the leaderboard is irreversible.</string>
+    <string name="remove_non_admin_users">Remove Non-Admin Users</string>
+    <string name="removing_non_admin_users_is_irreversible">Removing non-admin users is irreversible.</string>
+    <string name="enter_username_to_delete">Enter Username to Delete</string>
+    <string name="delete_user">Delete User</string>
+    <string name="cannot_delete_default_user_accounts">Cannot delete default user accounts.</string>
 </resources>

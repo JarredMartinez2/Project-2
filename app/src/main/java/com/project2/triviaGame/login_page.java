@@ -34,7 +34,6 @@ public class login_page extends AppCompatActivity {
         repository = ProjectRepository.getRepository(getApplication());
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
-//
         Button buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
