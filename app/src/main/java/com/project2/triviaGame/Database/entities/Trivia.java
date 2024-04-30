@@ -17,9 +17,11 @@ public class Trivia {
     private String wrongAnswer3;
     private String question;
 
-    public Trivia(String correctAnswer, String wrongAnswer, String question) {
+    public Trivia(String correctAnswer, String wrongAnswer, String wrongAnswer2, String wrongAnswer3, String question) {
         this.correctAnswer = correctAnswer;
         this.wrongAnswer = wrongAnswer;
+        this.wrongAnswer2 = wrongAnswer2;
+        this.wrongAnswer3 = wrongAnswer3;
         this.question = question;
     }
 
@@ -28,12 +30,12 @@ public class Trivia {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trivia trivia = (Trivia) o;
-        return setId == trivia.setId && Objects.equals(correctAnswer, trivia.correctAnswer) && Objects.equals(wrongAnswer, trivia.wrongAnswer) && Objects.equals(question, trivia.question);
+        return setId == trivia.setId && Objects.equals(correctAnswer, trivia.correctAnswer) && Objects.equals(wrongAnswer, trivia.wrongAnswer) && Objects.equals(wrongAnswer2, trivia.wrongAnswer2) && Objects.equals(wrongAnswer3, trivia.wrongAnswer3) && Objects.equals(question, trivia.question);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, correctAnswer, wrongAnswer, question);
+        return Objects.hash(setId, correctAnswer, wrongAnswer, wrongAnswer2, wrongAnswer3, question);
     }
 
     public int getSetId() {

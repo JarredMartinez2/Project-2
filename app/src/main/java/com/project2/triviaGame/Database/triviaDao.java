@@ -14,10 +14,11 @@ public interface triviaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Trivia... T);
     @Delete
-    void delete(UserDB user);
+    void delete(Trivia T);
     @Query("Select * from " + Project2Database.TRIVIA_TABLE + " Order by setId")
-    List<Trivia> getAllRecords();
-
+    List<Trivia> getAllSets();
+    @Query("Delete from " + Project2Database.TRIVIA_TABLE)
+    void deleteALl();
     @Query("Select wrongAnswer from " + Project2Database.TRIVIA_TABLE)
-    List<Trivia> allWrongAnswers();
+    List<Trivia> getAllWrongAnswers();
 }

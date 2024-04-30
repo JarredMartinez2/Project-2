@@ -68,10 +68,13 @@ public abstract class Project2Database extends RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
             databaseWriteExecuter.execute( () -> {
-
+            triviaDao dao = INSTANCE.triviaDao();
+            dao.deleteALl();
             });
         }
     };
 
     public abstract userDao userDao();
+
+    public abstract triviaDao triviaDao();
 }

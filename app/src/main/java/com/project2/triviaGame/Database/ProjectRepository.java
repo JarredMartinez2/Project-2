@@ -5,10 +5,12 @@ import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
+import com.project2.triviaGame.Database.entities.Trivia;
 import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.MainActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -16,13 +18,14 @@ import java.util.concurrent.Future;
 public class ProjectRepository {
     private userDao userDAO;
 
-    private ArrayList<UserDB> allLogs;
+    private triviaDao triviaDao;
+    private ArrayList<UserDB> alluserLogs;
 
     private static ProjectRepository repository;
     public ProjectRepository(Application application) {
         Project2Database db = Project2Database.getDatabase(application);
         this.userDAO = db.userDao();
-        this.allLogs = (ArrayList<UserDB>) this.userDAO.getAllRecords();
+        this.alluserLogs = (ArrayList<UserDB>) this.userDAO.getAllRecords();
     }
 
     public static ProjectRepository getRepository(Application application) {
@@ -45,7 +48,7 @@ public class ProjectRepository {
         return null;
     }
 
-    public ArrayList<UserDB> getAllLogs() {
+    public ArrayList<UserDB> getAlluserLogs() {
         Future<ArrayList<UserDB>> future = Project2Database.databaseWriteExecuter.submit(
                 new Callable<ArrayList<UserDB>>() {
                     @Override
@@ -70,5 +73,25 @@ public class ProjectRepository {
 
     public LiveData<UserDB> getUserByUserName(String userName) {
         return userDAO.getUserbyUserName(userName);
+    }
+
+    public List<Trivia> getallSet() {
+        return triviaDao.getAllSets();
+    }
+
+    public void insertSet(Trivia... t) {
+        Project2Database.databaseWriteExecuter.execute( () -> {
+            triviaDao.insert(t);
+        });
+    }
+
+    public void deleteSet(Trivia t) {
+        Project2Database.databaseWriteExecuter.execute(() -> {
+            triviaDao.delete(t);
+        });
+    }
+
+    public List<Trivia> getAllWrong() {
+        return triviaDao.getAllWrongAnswers();
     }
 }
