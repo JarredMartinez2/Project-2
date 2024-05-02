@@ -67,4 +67,8 @@
     <string name="enter_username_to_delete">Enter Username to Delete</string>
     <string name="delete_user">Delete User</string>
     <string name="cannot_delete_default_user_accounts">Cannot delete default user accounts.</string>
+    <string name="title_activity_leaderboard_page">leaderboard_page</string>
+    <string name="leaderboard_page">Leaderboard Page</string>
+    <string name="game_set_1">Game Set 1</string>
+    <string name="new_admin_password">new_admin_password</string>
 </resources>

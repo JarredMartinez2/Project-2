@@ -71,4 +71,8 @@ public class ProjectRepository {
     public LiveData<UserDB> getUserByUserName(String userName) {
         return userDAO.getUserbyUserName(userName);
     }
+
+    public void deleteUser(UserDB user) {
+        userDAO.delete(user);
+    }
 }
