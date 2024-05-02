@@ -71,4 +71,9 @@
     <string name="leaderboard_page">Leaderboard Page</string>
     <string name="game_set_1">Game Set 1</string>
     <string name="new_admin_password">new_admin_password</string>
+    <string name="title_activity_user_signup_page">user_signup_page</string>
+    <string name="user_sign_up_page">User Sign-Up Page</string>
+    <string name="enter_username">Enter username</string>
+    <string name="enter_password">Enter password</string>
+    <string name="confirm_user">Confirm User</string>
 </resources>

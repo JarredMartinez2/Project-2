@@ -59,6 +59,9 @@ public class admin_page extends AppCompatActivity {
                 String newAdminUsername = editTextNewAdminUsername.getText().toString().trim();
                 String newAdminPassword = editTextNewAdminPassword.getText().toString().trim();
                 Toast.makeText(admin_page.this, "New admin user created: " + newAdminUsername, Toast.LENGTH_SHORT).show();
+                UserDB user = new UserDB(newAdminUsername,newAdminPassword);
+                user.setAdmin(true);
+                repository.insertUser(user);
             }
         });
 

@@ -30,20 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
         Button loginButton = findViewById(R.id.buttonLogin);
         Button createAccountButton = findViewById(R.id.buttonCreateAccount);
-
+        createAccountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Log in activity
+                startActivity(new Intent(MainActivity.this, user_signup_page.class));
+        }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Log in activity
                 startActivity(new Intent(MainActivity.this, login_page.class));
-            }
-        });
-
-        createAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Create Account Activity (if needed - not developed yet)
-                //startActivity(new Intent(MainActivity.this, AccountCreateActivity.class));
             }
         });
     }
