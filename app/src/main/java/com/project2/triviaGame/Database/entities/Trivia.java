@@ -16,26 +16,33 @@ public class Trivia {
     private String wrongAnswer2;
     private String wrongAnswer3;
     private String question;
-
-    public Trivia(String correctAnswer, String wrongAnswer, String wrongAnswer2, String wrongAnswer3, String question) {
+    private String category;
+    public Trivia(String correctAnswer, String wrongAnswer, String wrongAnswer2, String wrongAnswer3, String question, String category) {
         this.correctAnswer = correctAnswer;
         this.wrongAnswer = wrongAnswer;
         this.wrongAnswer2 = wrongAnswer2;
         this.wrongAnswer3 = wrongAnswer3;
         this.question = question;
+        this.category = category;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trivia trivia = (Trivia) o;
-        return setId == trivia.setId && Objects.equals(correctAnswer, trivia.correctAnswer) && Objects.equals(wrongAnswer, trivia.wrongAnswer) && Objects.equals(wrongAnswer2, trivia.wrongAnswer2) && Objects.equals(wrongAnswer3, trivia.wrongAnswer3) && Objects.equals(question, trivia.question);
+        return setId == trivia.setId && Objects.equals(correctAnswer, trivia.correctAnswer) && Objects.equals(wrongAnswer, trivia.wrongAnswer) && Objects.equals(wrongAnswer2, trivia.wrongAnswer2) && Objects.equals(wrongAnswer3, trivia.wrongAnswer3) && Objects.equals(question, trivia.question) && Objects.equals(category, trivia.category);
     }
-
     @Override
     public int hashCode() {
-        return Objects.hash(setId, correctAnswer, wrongAnswer, wrongAnswer2, wrongAnswer3, question);
+        return Objects.hash(setId, correctAnswer, wrongAnswer, wrongAnswer2, wrongAnswer3, question, category);
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getSetId() {

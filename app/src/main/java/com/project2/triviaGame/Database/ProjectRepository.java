@@ -91,7 +91,7 @@ public class ProjectRepository {
         });
     }
 
-    public List<Trivia> getAllWrong() {
-        return triviaDao.getAllWrongAnswers();
+    public List<Trivia> getCurrentSet(String category) {
+        return triviaDao.getSet(category);
     }
 }
