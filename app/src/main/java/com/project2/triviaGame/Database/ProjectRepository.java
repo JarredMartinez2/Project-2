@@ -17,7 +17,6 @@ import java.util.concurrent.Future;
 
 public class ProjectRepository {
     private userDao userDAO;
-
     private triviaDao triviaDao;
     private ArrayList<UserDB> alluserLogs;
 
