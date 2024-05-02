@@ -2,72 +2,69 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayout4"
+    android:id="@+id/coordinatorLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:fitsSystemWindows="true"
+    tools:context=".remix_set_page">
 
     <TextView
-        android:id="@+id/textViewUsername"
+        android:id="@+id/CardRemixTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username: "
-        android:textSize="18sp"
+        android:text="@string/card_remix_page"
+        android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewLoggedInUser"
+        android:id="@+id/CardSetTitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewUsername"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonAdminArea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Admin Area"
-        android:visibility="invisible"
+        android:text="Card Set 1"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/CardRemixTitle" />
 
-    <Button
-        android:id="@+id/remixCardSets"
+    <EditText
+        android:id="@+id/CardSetEntry1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/remix_cards"
+        android:layout_height="50dp"
+        android:hint="@string/enter_card_set_1"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdminArea" />
+        app:layout_constraintTop_toBottomOf="@+id/CardSetTitle1" />
 
-    <Button
-        android:id="@+id/newCardSet"
+    <TextView
+        android:id="@+id/CardSetTitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/new_card_set"
+        android:text="@string/card_set_2"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/remixCardSets" />
+        app:layout_constraintTop_toBottomOf="@+id/CardSetEntry1" />
 
+    <EditText
+        android:id="@+id/CardSetEntry2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/enter_card_set_2"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CardSetTitle2" />
 
     <Button
-        android:id="@+id/buttonLogout"
+        android:id="@+id/RemixButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/logout"
+        android:text="@string/remix_sets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newCardSet" />
+        app:layout_constraintTop_toBottomOf="@+id/CardSetEntry2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

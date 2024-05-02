@@ -76,4 +76,11 @@
     <string name="enter_username">Enter username</string>
     <string name="enter_password">Enter password</string>
     <string name="confirm_user">Confirm User</string>
+    <string name="remix_cards">Remix Cards</string>
+    <string name="new_card_set">New Card Set</string>
+    <string name="remix_sets">Remix Sets</string>
+    <string name="enter_card_set_2">Enter Card Set 2</string>
+    <string name="card_set_2">Card Set 2</string>
+    <string name="enter_card_set_1">Enter Card Set 1</string>
+    <string name="card_remix_page">Card Remix Page</string>
 </resources>
