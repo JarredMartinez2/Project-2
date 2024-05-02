@@ -53,4 +53,12 @@
     <string name="create_an_account">Create an Account</string>
     <string name="legally_distinct_quiz_card_game">Legally Distinct Quiz-Card Game</string>
     <string name="logged_in_as">"Logged in as : "</string>
+    <string name="card_remix_page">card remix page</string>
+    <string name="card_set_1">Card Set 1</string>
+    <string name="enter_card_set_1">enter card set 1</string>
+    <string name="card_set_2">card set 2</string>
+    <string name="enter_card_set_2">enter card set 2</string>
+    <string name="remix_sets">remix sets</string>
+    <string name="remix_cards">remix cards</string>
+    <string name="new_card_set">new card set</string>
 </resources>
