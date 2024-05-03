@@ -4,7 +4,6 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.project2.triviaGame.Database.Project2Database;
-
 import java.util.Objects;
 
 @Entity(tableName = Project2Database.TRIVIA_TABLE)

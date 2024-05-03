@@ -9,6 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.project2.triviaGame.Database.entities.LeaderBoard;
 import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.Database.entities.Trivia;
 import com.project2.triviaGame.MainActivity;
@@ -16,9 +17,10 @@ import com.project2.triviaGame.MainActivity;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {UserDB.class, Trivia.class}, version = 4, exportSchema = false)
+@Database(entities = {UserDB.class, Trivia.class, LeaderBoard.class}, version = 5, exportSchema = false)
 public abstract class Project2Database extends RoomDatabase {
 
+    public static final String LB_TABLE = "lbTable";
     private static final String DATABASENAME = "userDB_database";
     public static final String USER_DB_TABLE = "userDbTable";
 
@@ -69,4 +71,6 @@ public abstract class Project2Database extends RoomDatabase {
     public abstract userDao userDao();
 
     public abstract triviaDao triviaDao();
+
+    public abstract  lbDao lbDao();
 }
