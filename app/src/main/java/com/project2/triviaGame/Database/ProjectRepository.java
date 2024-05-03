@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
+import com.project2.triviaGame.Database.entities.LeaderBoard;
 import com.project2.triviaGame.Database.entities.Trivia;
 import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.MainActivity;
@@ -18,6 +19,7 @@ import java.util.concurrent.Future;
 public class ProjectRepository {
     private userDao userDAO;
     private triviaDao triviaDao;
+    private lbDao lbDao;
     private ArrayList<UserDB> alluserLogs;
 
     private static ProjectRepository repository;
@@ -92,5 +94,21 @@ public class ProjectRepository {
 
     public List<Trivia> getCurrentSet(String category) {
         return triviaDao.getSet(category);
+    }
+
+    public List<LeaderBoard> getALlScores() {
+        return lbDao.getAllScores();
+    }
+
+    public void insertLB(LeaderBoard... lb) {
+        Project2Database.databaseWriteExecuter.execute(() -> {
+            lbDao.insert(lb);
+        });
+    }
+
+    public void deleteAll() {
+        Project2Database.databaseWriteExecuter.execute(() -> {
+            lbDao.deleteALl();
+        });
     }
 }
