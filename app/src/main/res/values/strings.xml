@@ -74,4 +74,14 @@
     <string name="enter_incorrect_answer2">enter incorrect answer2</string>
     <string name="enter_incorrect_answer3">enter incorrect answer3</string>
     <string name="enter_the_category_to_be_displayed">enter the category to be displayed:</string>
+    <string name="legally_distinct_quiz_game_admin_page">legally_distinct_quiz_game_admin_page</string>
+    <string name="clear_leaderboards">clear_leaderboards</string>
+    <string name="clearing_the_leaderboard_is_irreversible">clearing_the_leaderboard_is_irreversible</string>
+    <string name="remove_non_admin_users">remove_non_admin_users</string>
+    <string name="removing_non_admin_users_is_irreversible">removing_non_admin_users_is_irreversible</string>
+    <string name="new_admin_username">new_admin_username</string>
+    <string name="create_new_admin_user">create_new_admin_user</string>
+    <string name="enter_username_to_delete">enter_username_to_delete</string>
+    <string name="delete_user">delete_user</string>
+    <string name="cannot_delete_default_user_accounts">cannot_delete_default_user_accounts</string>
 </resources>

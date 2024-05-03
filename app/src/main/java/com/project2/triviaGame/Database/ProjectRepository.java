@@ -72,6 +72,12 @@ public class ProjectRepository {
         });
     }
 
+    public void deleteUser(UserDB userDB) {
+        Project2Database.databaseWriteExecuter.execute(() -> {
+            userDAO.delete(userDB);
+        });
+    }
+
     public LiveData<UserDB> getUserByUserName(String userName) {
         return userDAO.getUserbyUserName(userName);
     }
