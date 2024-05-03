@@ -15,7 +15,7 @@ public interface triviaDao {
     void insert(Trivia... T);
     @Delete
     void delete(Trivia T);
-    @Query("Select * from " + Project2Database.TRIVIA_TABLE + " Order by setId")
+    @Query("Select * from " + Project2Database.TRIVIA_TABLE)
     List<Trivia> getAllSets();
     @Query("Delete from " + Project2Database.TRIVIA_TABLE)
     void deleteALl();

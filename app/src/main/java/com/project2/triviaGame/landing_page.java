@@ -21,7 +21,7 @@ import com.project2.triviaGame.databinding.ActivityLandingPageBinding;
 public class landing_page extends AppCompatActivity {
 
     private TextView textViewUsername;
-    private Button adminAreaButton, logoutButton;
+    private Button adminAreaButton, logoutButton, deleteSetButton;
     private SharedPreferences sharedPreferences;
 
     private static final String PREF_NAME = "user_pref";
@@ -38,6 +38,7 @@ public class landing_page extends AppCompatActivity {
 
         textViewUsername = findViewById(R.id.textViewUsername);
         adminAreaButton = findViewById(R.id.buttonAdminArea);
+        deleteSetButton = findViewById(R.id.deleteSetButton);
         logoutButton = findViewById(R.id.buttonLogout);
 
 
@@ -54,7 +55,7 @@ public class landing_page extends AppCompatActivity {
         adminAreaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //functionality for next part of the assignment.
+                startActivity(new Intent(landing_page.this, admin_page.class));
             }
         });
 
@@ -64,6 +65,13 @@ public class landing_page extends AppCompatActivity {
             public void onClick(View v) {
                 sharedPreferences.edit().clear().apply();
                 startActivity(new Intent(landing_page.this, MainActivity.class));
+            }
+        });
+
+        deleteSetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(landing_page.this, deleteSetPage.class));
             }
         });
     }

@@ -84,4 +84,7 @@
     <string name="enter_username_to_delete">enter_username_to_delete</string>
     <string name="delete_user">delete_user</string>
     <string name="cannot_delete_default_user_accounts">cannot_delete_default_user_accounts</string>
+    <string name="delete_a_set">Delete a set</string>
+    <string name="enter_name_of_set_to_delete">enter name of set to delete</string>
+    <string name="pick_a_set_to_delete">Pick a set to delete</string>
 </resources>

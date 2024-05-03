@@ -22,10 +22,14 @@ public class ProjectRepository {
     private lbDao lbDao;
     private ArrayList<UserDB> alluserLogs;
 
+    private ArrayList<Trivia> allTriviaLogs;
     private static ProjectRepository repository;
     public ProjectRepository(Application application) {
         Project2Database db = Project2Database.getDatabase(application);
         this.userDAO = db.userDao();
+        this.triviaDao = db.triviaDao();
+        this.lbDao = db.lbDao();
+        this.allTriviaLogs = (ArrayList<Trivia>) this.triviaDao.getAllSets();
         this.alluserLogs = (ArrayList<UserDB>) this.userDAO.getAllRecords();
     }
 
@@ -82,10 +86,6 @@ public class ProjectRepository {
         return userDAO.getUserbyUserName(userName);
     }
 
-    public List<Trivia> getallSet() {
-        return triviaDao.getAllSets();
-    }
-
     public void insertSet(Trivia... t) {
         Project2Database.databaseWriteExecuter.execute( () -> {
             triviaDao.insert(t);
@@ -96,6 +96,10 @@ public class ProjectRepository {
         Project2Database.databaseWriteExecuter.execute(() -> {
             triviaDao.delete(t);
         });
+    }
+
+    public ArrayList<Trivia> getAllTriviaLogs() {
+        return allTriviaLogs;
     }
 
     public List<Trivia> getCurrentSet(String category) {
