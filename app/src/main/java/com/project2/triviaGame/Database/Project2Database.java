@@ -16,7 +16,7 @@ import com.project2.triviaGame.MainActivity;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {UserDB.class, Trivia.class}, version = 4, exportSchema = false)
+@Database(entities = {UserDB.class, Trivia.class}, version = 5, exportSchema = false)
 public abstract class Project2Database extends RoomDatabase {
 
     private static final String DATABASENAME = "userDB_database";

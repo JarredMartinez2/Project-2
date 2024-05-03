@@ -61,4 +61,17 @@
     <string name="remix_sets">remix sets</string>
     <string name="remix_cards">remix cards</string>
     <string name="new_card_set">new card set</string>
+    <string name="title_activity_game_play_page">game_play_page</string>
+    <string name="select_answer">Select Answer</string>
+    <string name="enter_the_incorrect_answer_responses">Enter the incorrect answer responses:</string>
+    <string name="enter_category">enter category</string>
+    <string name="enter_question">enter question</string>
+    <string name="create_question_and_responses">Create Question and Responses</string>
+    <string name="enter_the_question_to_be_displayed">Enter the question to be displayed:</string>
+    <string name="enter_the_correct_answer_response">Enter the correct answer response:</string>
+    <string name="enter_correct_answer">enter correct answer</string>
+    <string name="enter_incorrect_answer1">enter incorrect answer1</string>
+    <string name="enter_incorrect_answer2">enter incorrect answer2</string>
+    <string name="enter_incorrect_answer3">enter incorrect answer3</string>
+    <string name="enter_the_category_to_be_displayed">enter the category to be displayed:</string>
 </resources>
