@@ -10,6 +10,7 @@ import com.project2.triviaGame.Database.entities.Trivia;
 import com.project2.triviaGame.Database.entities.UserDB;
 import com.project2.triviaGame.MainActivity;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -22,6 +23,7 @@ public class ProjectRepository {
     private lbDao lbDao;
     private ArrayList<UserDB> alluserLogs;
 
+    private ArrayList<Trivia> currentSet;
     private ArrayList<Trivia> allTriviaLogs;
     private static ProjectRepository repository;
     public ProjectRepository(Application application) {
@@ -102,8 +104,9 @@ public class ProjectRepository {
         return allTriviaLogs;
     }
 
-    public List<Trivia> getCurrentSet(String category) {
-        return triviaDao.getSet(category);
+    public ArrayList<Trivia> getCurrentSet(String category) {
+        currentSet = (ArrayList<Trivia>) triviaDao.getSet(category);
+        return currentSet;
     }
 
     public List<LeaderBoard> getALlScores() {

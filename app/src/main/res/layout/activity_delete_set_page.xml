@@ -30,6 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/DeleteSet" />
 
     <EditText
+        android:id="@+id/nameOfSetToDelete"
         android:layout_width="236dp"
         android:layout_height="84dp"
         android:layout_marginTop="40dp"
@@ -38,4 +39,15 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setNames" />
+
+    <Button
+        android:id="@+id/deletebutton"
+        android:layout_width="124dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="28dp"
+        android:text="Delete the entered set"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameOfSetToDelete" />
 </androidx.constraintlayout.widget.ConstraintLayout>

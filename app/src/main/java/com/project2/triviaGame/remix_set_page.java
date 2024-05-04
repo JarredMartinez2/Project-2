@@ -23,7 +23,7 @@ import com.project2.triviaGame.databinding.ActivityRemixSetPageBinding;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+//TODO: make toast warning maybe
 public class remix_set_page extends AppCompatActivity {
     private ProjectRepository repository;
     @Override
@@ -35,32 +35,42 @@ public class remix_set_page extends AppCompatActivity {
         EditText editTextCardSet2 = findViewById(R.id.CardSetEntry2);
         Button RemixButton = findViewById(R.id.RemixButton);
         RemixButton.setOnClickListener(new View.OnClickListener() {
+            List<Trivia> mcardSet1;
             @Override
             public void onClick(View v) {
                 String cardSet1 = editTextCardSet1.getText().toString().trim();
-                String cardSet2 = editTextCardSet1.getText().toString().trim();
+                String cardSet2 = editTextCardSet2.getText().toString().trim();
                 if (!cardSet1.isEmpty() || !cardSet2.isEmpty()) {
-                    List<Trivia> mcardSet1 = repository.getCurrentSet(cardSet1);
-                    List<Trivia> mcardSet2 = repository.getCurrentSet(cardSet2);
-                    if (!mcardSet1.isEmpty() || !mcardSet2.isEmpty()) {
-                        List<Trivia> remixSet = new ArrayList<>();
-                        for (int i = 0; i <= 8; i= i+2) {
-                            remixSet.add(mcardSet1.get(i));
+                    List<Trivia> mcardSet1 = repository.getAllTriviaLogs();
+                    List<Trivia> mcardSet2 = new ArrayList<>();
+                    for (int i = 0; i < mcardSet1.size(); i++) {
+                        if (mcardSet1.get(i).getCategory().equals(cardSet1)) {
+                            mcardSet2.add(mcardSet1.get(i));
+                            if (mcardSet2.size() > 3) {
+                                break;
+                            }
                         }
-                        for (int i = 1; i <= 9; i = i+2) {
-                            remixSet.add(mcardSet2.get(i));
-                        }
-                        Collections.shuffle(remixSet);
-
-                        for (int i = 0; i < 10; i++) {
-                            remixSet.get(i).setCategory("remix of " + cardSet1+ " and " + cardSet2);
-                            repository.insertSet(remixSet.get(i));
+                    }
+                    for (int i = 0; i < mcardSet1.size(); i++) {
+                        if (mcardSet1.get(i).getCategory().equals(cardSet2)) {
+                            mcardSet2.add(mcardSet1.get(i));
+                            if (mcardSet2.size() > 2) {
+                                break;
+                            }
                         }
                     }
 
+                    Collections.shuffle(mcardSet2);
+                    int setId = mcardSet1.get(mcardSet1.size() - 1).getSetId();
+
+                    for (int i = 0; i < mcardSet2.size(); i++) {
+                            mcardSet2.get(i).setCategory("remix of " + cardSet1+ " and " + cardSet2);
+                            setId++;
+                            mcardSet2.get(i).setSetId(setId);
+                            repository.insertSet(mcardSet2.get(i));
+                        }
                 }
             }
-
         });
     }
 }
