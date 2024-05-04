@@ -87,4 +87,12 @@
     <string name="delete_a_set">Delete a set</string>
     <string name="enter_name_of_set_to_delete">enter name of set to delete</string>
     <string name="pick_a_set_to_delete">Pick a set to delete</string>
+    <string name="user_sign_up_page">user sign up page</string>
+    <string name="enter_username">enter username</string>
+    <string name="enter_password">enter password</string>
+    <string name="confirm_user">confirm user</string>
+    <string name="game_set_1">game set 1</string>
+    <string name="_2_null_0">2. null: 0</string>
+    <string name="game_set_2">Game Set 2</string>
+    <string name="_1_null_0">1. null: 0</string>
 </resources>

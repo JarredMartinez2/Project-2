@@ -16,6 +16,15 @@
             android:name=".deleteSetPage"
             android:exported="false" />
         <activity
+            android:name=".play_page"
+            android:exported="false" />
+        <activity
+            android:name=".user_signup_page"
+            android:exported="false" />
+        <activity
+            android:name=".leaderboard_page"
+            android:exported="false" />
+        <activity
             android:name=".admin_page"
             android:exported="false" />
         <activity
