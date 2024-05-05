@@ -21,7 +21,7 @@ import com.project2.triviaGame.databinding.ActivityLandingPageBinding;
 public class landing_page extends AppCompatActivity {
 
     private TextView textViewUsername;
-    private Button adminAreaButton, logoutButton, deleteSetButton, addSetButton, remixButton;
+    private Button adminAreaButton, logoutButton, deleteSetButton, addSetButton, remixButton, playButton;
     private SharedPreferences sharedPreferences;
 
     private static final String PREF_NAME = "user_pref";
@@ -42,6 +42,7 @@ public class landing_page extends AppCompatActivity {
         addSetButton = findViewById(R.id.newCardSet);
         remixButton = findViewById(R.id.remixCardSets);
         logoutButton = findViewById(R.id.buttonLogout);
+        playButton = findViewById(R.id.playButton);
 
 
         boolean admin = getIntent().getBooleanExtra("admin", false);
@@ -88,6 +89,13 @@ public class landing_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(landing_page.this, remix_set_page.class));
+            }
+        });
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(landing_page.this, selectTriviaSetPage.class));
             }
         });
 
