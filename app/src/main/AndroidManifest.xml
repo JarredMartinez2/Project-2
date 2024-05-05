@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Project2"
         tools:targetApi="31">
         <activity
+            android:name=".leaderBoard_askUser"
+            android:exported="false" />
+        <activity
+            android:name=".question5"
+            android:exported="false" />
+        <activity
+            android:name=".question4"
+            android:exported="false" />
+        <activity
+            android:name=".question3"
+            android:exported="false" />
+        <activity
+            android:name=".question2_page"
+            android:exported="false" />
+        <activity
             android:name=".selectTriviaSetPage"
             android:exported="false" />
         <activity

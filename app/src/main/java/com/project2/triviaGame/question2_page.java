@@ -1,17 +1,17 @@
 package com.project2.triviaGame;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
-
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 import com.project2.triviaGame.Database.ProjectRepository;
 import com.project2.triviaGame.Database.entities.Trivia;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class play_page extends AppCompatActivity {
+public class question2_page extends AppCompatActivity {
     private long milliseconds = 15000;
     private ProjectRepository repository;
     private TextView timerView, questionView;
@@ -31,50 +31,36 @@ public class play_page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_page);
+        setContentView(R.layout.activity_question2_page);
         repository = ProjectRepository.getRepository(getApplication());
-        timerView = findViewById(R.id.timer2);
+        timerView = findViewById(R.id.timer_5);
         questionView = findViewById(R.id.question_5);
         correct = findViewById(R.id.correctAnswer_5);
         wrong1 = findViewById(R.id.incorrectAnswer1_5);
         wrong2 = findViewById(R.id.incorrectAnswer2_5);
         wrong3 = findViewById(R.id.incorrectAnswer3_5);
-        start = findViewById(R.id.startButton);
         correctSet = new ArrayList<>();
-        intent = new Intent(play_page.this, question2_page.class);
-
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = getIntent().getStringExtra("nameOfSet");
-                intent.putExtra("nameOfSet", name);
-                List<Trivia> fullset = repository.getAllTriviaLogs();
-                if (name == null) {
-                    name = "";
+        score = getIntent().getIntExtra("score", 0);
+        intent = new Intent(question2_page.this, question3.class);
+        String name = getIntent().getStringExtra("nameOfSet");
+        intent.putExtra("nameOfSet", name);
+        List<Trivia> fullset = repository.getAllTriviaLogs();
+        if (name == null) {
+            name = "";
+        }
+        if (!name.isEmpty()) {
+            for(int i = 0; i < fullset.size(); i++) {
+                if (fullset.get(i).getCategory().equals(name)) {
+                    correctSet.add(fullset.get(i));
                 }
-                if (!name.isEmpty()) {
-                    for(int i = 0; i < fullset.size(); i++) {
-                        if (fullset.get(i).getCategory().equals(name)) {
-                            correctSet.add(fullset.get(i));
-                        }
-                    }
-                }
-                start.setVisibility(View.INVISIBLE);
-                timerView.setVisibility(View.VISIBLE);
-                questionView.setVisibility(View.VISIBLE);
-                correct.setVisibility(View.VISIBLE);
-                wrong1.setVisibility(View.VISIBLE);
-                wrong2.setVisibility(View.VISIBLE);
-                wrong3.setVisibility(View.VISIBLE);
-
-                questionView.setText(correctSet.get(0).getQuestion());
-                correct.setText(correctSet.get(0).getCorrectAnswer());
-                wrong1.setText(correctSet.get(0).getWrongAnswer());
-                wrong2.setText(correctSet.get(0).getWrongAnswer2());
-                wrong3.setText(correctSet.get(0).getWrongAnswer3());
-                timer.start();
             }
-        });
+        }
+        questionView.setText(correctSet.get(1).getQuestion());
+        correct.setText(correctSet.get(1).getCorrectAnswer());
+        wrong1.setText(correctSet.get(1).getWrongAnswer());
+        wrong2.setText(correctSet.get(1).getWrongAnswer2());
+        wrong3.setText(correctSet.get(1).getWrongAnswer3());
+        timer.start();
 
         correct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,23 +105,22 @@ public class play_page extends AppCompatActivity {
             timerView.setText(time);
             milliseconds = millisUntilFinished;
         }
-       @Override
-       public void onFinish() {
-           timerView.setText("00");
-           ViewCompat.setBackgroundTintList(wrong1, ContextCompat.getColorStateList(play_page.this, R.color.red));
-           ViewCompat.setBackgroundTintList(wrong2, ContextCompat.getColorStateList(play_page.this, R.color.red));
-           ViewCompat.setBackgroundTintList(wrong3, ContextCompat.getColorStateList(play_page.this, R.color.red));
-           ViewCompat.setBackgroundTintList(correct, ContextCompat.getColorStateList(play_page.this, R.color.green));
-           Toast.makeText(play_page.this, "We made it here", Toast.LENGTH_SHORT).show();
-           nextQuestion();
-       }
+        @Override
+        public void onFinish() {
+            timerView.setText("");
+            ViewCompat.setBackgroundTintList(wrong1, ContextCompat.getColorStateList(question2_page.this, R.color.red));
+            ViewCompat.setBackgroundTintList(wrong2, ContextCompat.getColorStateList(question2_page.this, R.color.red));
+            ViewCompat.setBackgroundTintList(wrong3, ContextCompat.getColorStateList(question2_page.this, R.color.red));
+            ViewCompat.setBackgroundTintList(correct, ContextCompat.getColorStateList(question2_page.this, R.color.green));
+            Toast.makeText(question2_page.this, "We made it here", Toast.LENGTH_SHORT).show();
+            nextQuestion();
+        }
     };
 
     public void nextQuestion() {
         Handler handler = new Handler();
         Runnable r=new Runnable() {
             public void run() {
-                timer.cancel();
                 startActivity(intent);
             }
         };

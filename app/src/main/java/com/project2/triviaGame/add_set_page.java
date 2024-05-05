@@ -23,9 +23,9 @@ public class add_set_page extends AppCompatActivity {
         question = findViewById(R.id.mquestion);
         category = findViewById(R.id.category);
         correctAnswer = findViewById(R.id.correctAnswer1);
-        incorrectAnswer1 = findViewById(R.id.incorrectAnswer1);
-        incorrectAnswer2 = findViewById(R.id.incorrectAnswer2);
-        incorrectAnswer3 = findViewById(R.id.incorrectAnswer3);
+        incorrectAnswer1 = findViewById(R.id.incorrectAnswer1_5);
+        incorrectAnswer2 = findViewById(R.id.incorrectAnswer2_5);
+        incorrectAnswer3 = findViewById(R.id.incorrectAnswer3_5);
         submitQuestionButton = findViewById(R.id.submitQuestionButton);
         submitQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
