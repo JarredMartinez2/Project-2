@@ -46,7 +46,6 @@ public class question5 extends AppCompatActivity {
         score = getIntent().getIntExtra("score", 0);
         intent = new Intent(question5.this, leaderBoard_askUser.class);
         String name = getIntent().getStringExtra("nameOfSet");
-        intent.putExtra("nameOfSet", name);
         List<Trivia> fullset = repository.getAllTriviaLogs();
         if (name == null) {
             name = "";

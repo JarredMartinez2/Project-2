@@ -13,6 +13,7 @@ public class leaderBoard_askUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_leader_board_ask_user);
     }
 }
