@@ -17,7 +17,7 @@ import com.project2.triviaGame.MainActivity;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {UserDB.class, Trivia.class, LeaderBoard.class}, version = 16, exportSchema = false)
+@Database(entities = {UserDB.class, Trivia.class, LeaderBoard.class}, version = 18, exportSchema = false)
 public abstract class Project2Database extends RoomDatabase {
 
     public static final String LB_TABLE = "lbTable";
@@ -63,7 +63,7 @@ public abstract class Project2Database extends RoomDatabase {
                 UserDB testUser1 = new UserDB("testuser1", "testuser1");
                 dao.insert(testUser1);
                 Trivia q1 = new Trivia("Thor", "Iron Man", "Island Boy",
-                        "Ronin", "Who weilds Mjollnir?", "Marvel");
+                        "Ronin", "Who wields Mjollnir?", "Marvel");
                 tDao.insert(q1);
                 Trivia q2 = new Trivia("Thanos", "Red Skull", "Mr.Beast",
                         "Darkseid", "Who snapped away half the world?", "Marvel");
@@ -79,6 +79,17 @@ public abstract class Project2Database extends RoomDatabase {
                 tDao.insert(q5);
                 LeaderBoard lb = new LeaderBoard(4, "ABC");
                 lbDao.insert(lb);
+
+                Trivia t1 = new Trivia("dr c", "dr markov", "dr jotto", "dr r2", "who is the teacher of cst 338?", "CST338");
+                tDao.insert(t1);
+                Trivia t2 = new Trivia ("Tomas" , "William", "Nathan" ,"yoda", "who is the ta for the morning section?", "CST338");
+                tDao.insert(t2);
+                Trivia t3 = new Trivia ("java", "javascript", "javascriptisjava", "cobol", "What is the language of focus primarily for cst 338?", "CST338");
+                tDao.insert(t3);
+                Trivia t4 = new Trivia("BIT Building", "Chapman Science Building", "Zoom", "Death Star", "Where does CST 338 meet?", "CST338");
+                tDao.insert(t4);
+                Trivia t5 = new Trivia ("Mon and Wed","Wed and Fri","Monday","Thursday","What day or days does the class meet?", "CST338");
+                tDao.insert(t5);
             });
         }
     };

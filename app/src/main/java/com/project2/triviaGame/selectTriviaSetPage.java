@@ -1,7 +1,6 @@
 package com.project2.triviaGame;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Index;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import com.project2.triviaGame.Database.ProjectRepository;
 import com.project2.triviaGame.Database.entities.Trivia;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class selectTriviaSetPage extends AppCompatActivity {
 

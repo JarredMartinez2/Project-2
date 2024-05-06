@@ -11,10 +11,7 @@ import android.widget.TextView;
 import com.project2.triviaGame.Database.ProjectRepository;
 import com.project2.triviaGame.Database.entities.LeaderBoard;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 
 public class leaderboard_page extends AppCompatActivity {
     private ProjectRepository repository;

@@ -8,8 +8,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.project2.triviaGame.Database.entities.UserDB;
-
-import java.util.ArrayList;
 import java.util.List;
 
 

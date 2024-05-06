@@ -1,25 +1,15 @@
 package com.project2.triviaGame;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.core.view.WindowCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.project2.triviaGame.Database.ProjectRepository;
 import com.project2.triviaGame.Database.entities.UserDB;
-import com.project2.triviaGame.databinding.ActivityUserSignupPageBinding;
 
 public class user_signup_page extends AppCompatActivity {
 
