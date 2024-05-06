@@ -22,9 +22,8 @@ public class ProjectRepository {
     private triviaDao triviaDao;
     private lbDao lbDao;
     private ArrayList<UserDB> alluserLogs;
-
-    private ArrayList<Trivia> currentSet;
     private ArrayList<Trivia> allTriviaLogs;
+    private ArrayList<LeaderBoard> allLeaderBoard;
     private static ProjectRepository repository;
     public ProjectRepository(Application application) {
         Project2Database db = Project2Database.getDatabase(application);
@@ -33,6 +32,7 @@ public class ProjectRepository {
         this.lbDao = db.lbDao();
         this.allTriviaLogs = (ArrayList<Trivia>) this.triviaDao.getAllSets();
         this.alluserLogs = (ArrayList<UserDB>) this.userDAO.getAllRecords();
+        this.allLeaderBoard = (ArrayList<LeaderBoard>) this.lbDao.getAllScores();
     }
 
     public static ProjectRepository getRepository(Application application) {
@@ -104,13 +104,8 @@ public class ProjectRepository {
         return allTriviaLogs;
     }
 
-    public ArrayList<Trivia> getCurrentSet(String category) {
-        currentSet = (ArrayList<Trivia>) triviaDao.getSet(category);
-        return currentSet;
-    }
-
     public List<LeaderBoard> getALlScores() {
-        return lbDao.getAllScores();
+        return allLeaderBoard;
     }
 
     public void insertLB(LeaderBoard... lb) {

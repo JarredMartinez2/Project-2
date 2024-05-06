@@ -32,27 +32,9 @@ public class admin_page extends AppCompatActivity {
         editTextNewAdminUsername = findViewById(R.id.editTextNewAdminUsername);
         editTextNewAdminPassword = findViewById(R.id.editTextNewAdminPassword);
         editTextDeleteUser = findViewById(R.id.editTextDeleteUser);
-        Button buttonClearLeaderboards = findViewById(R.id.buttonClearLeaderboards);
-        Button buttonRemoveNonAdminUsers = findViewById(R.id.buttonRemoveNonAdminUsers);
         Button buttonCreateNewAdminUser = findViewById(R.id.buttonCreateNewAdminUser);
         Button buttonDeleteUser = findViewById(R.id.buttonDeleteUser);
         repository = ProjectRepository.getRepository(getApplication());
-        buttonClearLeaderboards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Need to implement logic to clear leaderboards
-                Toast.makeText(admin_page.this, "Leaderboards cleared.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonRemoveNonAdminUsers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Need to implement logic to be able to remove non-admin users
-                Toast.makeText(admin_page.this, "Non-admin users removed.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         buttonCreateNewAdminUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

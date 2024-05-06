@@ -20,82 +20,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonClearLeaderboards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="@string/clear_leaderboards"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-    <TextView
-        android:id="@+id/textViewClearLeaderboardsWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonClearLeaderboards"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/clearing_the_leaderboard_is_irreversible"
-        android:textColor="@android:color/holo_red_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonClearLeaderboards" />
-
-    <Button
-        android:id="@+id/buttonRemoveNonAdminUsers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewClearLeaderboardsWarning"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="@string/remove_non_admin_users"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewClearLeaderboardsWarning" />
-
-    <TextView
-        android:id="@+id/textViewRemoveNonAdminUsersWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonRemoveNonAdminUsers"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/removing_non_admin_users_is_irreversible"
-        android:textColor="@android:color/holo_red_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRemoveNonAdminUsers" />
 
     <EditText
         android:id="@+id/editTextNewAdminUsername"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewRemoveNonAdminUsersWarning"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:hint="@string/new_admin_username"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRemoveNonAdminUsersWarning" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <EditText
         android:id="@+id/editTextNewAdminPassword"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewRemoveNonAdminUsersWarning"
-        android:layout_marginTop="84dp"
         android:hint="new_admin_password"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRemoveNonAdminUsersWarning" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNewAdminUsername" />
 
     <Button
         android:id="@+id/buttonCreateNewAdminUser"

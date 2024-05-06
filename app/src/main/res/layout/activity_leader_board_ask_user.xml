@@ -11,19 +11,8 @@
         android:id="@+id/lbName"
         android:layout_width="159dp"
         android:layout_height="70dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="132dp"
         android:hint="Enter 3 Letter userName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/debug"
-        android:layout_width="134dp"
-        android:layout_height="45dp"
-        android:text=""
-        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -16,6 +16,6 @@ public interface lbDao {
     void insert(LeaderBoard... leaderBoards);
     @Query("Delete from " + Project2Database.LB_TABLE)
     void deleteALl();
-    @Query("Select * from " + Project2Database.LB_TABLE )
+    @Query("Select * from " + Project2Database.LB_TABLE)
     List<LeaderBoard> getAllScores();
 }

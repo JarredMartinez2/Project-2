@@ -24,7 +24,6 @@ import com.project2.triviaGame.databinding.ActivityUserSignupPageBinding;
 public class user_signup_page extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityUserSignupPageBinding binding;
     private ProjectRepository repository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

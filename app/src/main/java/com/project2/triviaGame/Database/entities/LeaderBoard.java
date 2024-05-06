@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey;
 
 import com.project2.triviaGame.Database.Project2Database;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 @Entity(tableName = Project2Database.LB_TABLE)

@@ -107,7 +107,7 @@ public class question2_page extends AppCompatActivity {
         }
         @Override
         public void onFinish() {
-            timerView.setText("");
+            timerView.setText("00");
             ViewCompat.setBackgroundTintList(wrong1, ContextCompat.getColorStateList(question2_page.this, R.color.red));
             ViewCompat.setBackgroundTintList(wrong2, ContextCompat.getColorStateList(question2_page.this, R.color.red));
             ViewCompat.setBackgroundTintList(wrong3, ContextCompat.getColorStateList(question2_page.this, R.color.red));

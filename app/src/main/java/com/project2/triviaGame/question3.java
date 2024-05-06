@@ -56,11 +56,11 @@ public class question3 extends AppCompatActivity {
                 }
             }
         }
-        questionView.setText(correctSet.get(1).getQuestion());
-        correct.setText(correctSet.get(1).getCorrectAnswer());
-        wrong1.setText(correctSet.get(1).getWrongAnswer());
-        wrong2.setText(correctSet.get(1).getWrongAnswer2());
-        wrong3.setText(correctSet.get(1).getWrongAnswer3());
+        questionView.setText(correctSet.get(2).getQuestion());
+        correct.setText(correctSet.get(2).getCorrectAnswer());
+        wrong1.setText(correctSet.get(2).getWrongAnswer());
+        wrong2.setText(correctSet.get(2).getWrongAnswer2());
+        wrong3.setText(correctSet.get(2).getWrongAnswer3());
         timer.start();
 
         correct.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +107,7 @@ public class question3 extends AppCompatActivity {
         }
         @Override
         public void onFinish() {
-            timerView.setText("");
+            timerView.setText("00");
             ViewCompat.setBackgroundTintList(wrong1, ContextCompat.getColorStateList(question3.this, R.color.red));
             ViewCompat.setBackgroundTintList(wrong2, ContextCompat.getColorStateList(question3.this, R.color.red));
             ViewCompat.setBackgroundTintList(wrong3, ContextCompat.getColorStateList(question3.this, R.color.red));
